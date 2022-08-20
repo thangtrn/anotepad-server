@@ -23,5 +23,5 @@ app.get('/', (req, res) => {
 app.use('/api', routes);
 
 app.listen(process.env.PORT || 5000, ()=> {
-    console.log('Server is running on port', + PORT);
+    console.log('Server is running on port', + (process.env.PORT || 5000));
 });
