@@ -7,7 +7,6 @@ import routes from './routes/index.js';
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_URL, error => {
     if(error) throw error;
@@ -23,6 +22,6 @@ app.get('/', (req, res) => {
 })
 app.use('/api', routes);
 
-app.listen(PORT, ()=> {
+app.listen(process.env.PORT || 5000, ()=> {
     console.log('Server is running on port', + PORT);
 });
